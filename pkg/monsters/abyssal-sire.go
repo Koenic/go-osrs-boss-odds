@@ -72,10 +72,6 @@ var AbyssalSire = pkg.DefaultMonster{
 						Name:   "Abyssal dagger",
 						Amount: 1,
 					},
-					{
-						Name:   "Abyssal whip",
-						Amount: 1,
-					},
 				},
 			},
 		},

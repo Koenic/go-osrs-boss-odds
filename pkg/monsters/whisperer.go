@@ -18,27 +18,27 @@ var Whisperer = pkg.DefaultMonster{
 				{
 					{
 						Name: "Chromium ingot",
-						Odds: (1.0 / 96) * (3.0 / 8),
+						Odds: (1.0 / 64) * (3.0 / 8),
 					},
 					{
 						Name: "Bellator vestige Roll",
-						Odds: (1.0 / 96) * (3.0 / 8),
+						Odds: (1.0 / 64) * (3.0 / 8),
 					},
 					{
 						Name: "Siren's staff",
-						Odds: (1.0 / 96) * (1.0 / 8),
+						Odds: (1.0 / 64) * (1.0 / 8),
 					},
 					{
 						Name: "Virtus mask",
-						Odds: (1.0 / 96) * (1.0 / 8) * (1.0 / 3),
+						Odds: (1.0 / 64) * (1.0 / 8) * (1.0 / 3),
 					},
 					{
 						Name: "Virtus robe top",
-						Odds: (1.0 / 96) * (1.0 / 8) * (1.0 / 3),
+						Odds: (1.0 / 64) * (1.0 / 8) * (1.0 / 3),
 					},
 					{
 						Name: "Virtus robe bottom",
-						Odds: (1.0 / 96) * (1.0 / 8) * (1.0 / 3),
+						Odds: (1.0 / 64) * (1.0 / 8) * (1.0 / 3),
 					},
 					{
 						Name: "Sirenic tablet",
@@ -112,6 +112,20 @@ var Whisperer = pkg.DefaultMonster{
 					},
 					{
 						Name:   "Virtus robe bottom",
+						Amount: 1,
+					},
+				},
+				{
+					{
+						Name:   "Chromium ingot",
+						Amount: 3,
+					},
+					{
+						Name:   "Bellator vestige Roll",
+						Amount: 3,
+					},
+					{
+						Name:   "Siren's staff",
 						Amount: 1,
 					},
 				},

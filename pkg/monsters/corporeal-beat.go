@@ -23,7 +23,7 @@ var CorporealBeast = pkg.DefaultMonster{
 				},
 				{
 					{
-						Name: "Spectral sigil",
+						Name: "Arcane sigil",
 						Odds: (1.0 / 585) * (3.0 / 7),
 					},
 					{
@@ -55,7 +55,7 @@ var CorporealBeast = pkg.DefaultMonster{
 						Amount: 1,
 					},
 					{
-						Name:   "Spectral sigil",
+						Name:   "Arcane sigil",
 						Amount: 1,
 					},
 					{
@@ -77,7 +77,7 @@ var CorporealBeast = pkg.DefaultMonster{
 				},
 				{
 					{
-						Name:   "Spectral sigil",
+						Name:   "Arcane sigil",
 						Amount: 1,
 					},
 					{

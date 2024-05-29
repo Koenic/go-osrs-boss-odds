@@ -28,7 +28,7 @@ type exportData struct {
 }
 
 var goal_completion = 0.9999
-var data_points = 20000
+var data_points = 5000
 
 func filesExist(monsterName string) bool {
 
@@ -54,9 +54,11 @@ func filesExist(monsterName string) bool {
 
 func main() {
 
+	testRun := false
 	argsWithoutProg := ""
 	if len(os.Args) >= 2 {
 		argsWithoutProg = os.Args[1]
+		testRun = true
 		f, err := os.Create("myprogram.prof")
 		if err != nil {
 			fmt.Println(err)
@@ -92,25 +94,26 @@ func main() {
 				x_vals := []int64{}
 
 				iterations := 1
+				step_size := 1
 
-				// Determine step size
-				for matrix_base.At(0, j-1) < goal_completion {
-					matrix_base.Mul(matrix_base, matrix_base)
-					iterations <<= 1
+				if testRun {
+					// Determine increased step size for test runs
+					for matrix_base.At(0, j-1) < goal_completion {
+						matrix_base.Mul(matrix_base, matrix_base)
+						iterations <<= 1
+					}
+
+					scaled_datapoints := data_points / int(math.Log2(float64(i)))
+					if scaled_datapoints == 0 {
+						scaled_datapoints = 1
+					}
+					step_size := ((iterations) / scaled_datapoints)
+
+					if step_size == 0 {
+						step_size = 1
+					}
+					fmt.Println("step size", step_size)
 				}
-
-				scaled_datapoints := data_points / int(math.Log2(float64(i)))
-				if scaled_datapoints == 0 {
-					scaled_datapoints = 1
-				}
-				step_size := ((iterations) / scaled_datapoints)
-
-				if step_size == 0 {
-					step_size = 1
-				}
-				step_size = 1
-
-				fmt.Println("step size", step_size)
 
 				cdf = append(cdf, 0)
 				x_vals = append(x_vals, 0)

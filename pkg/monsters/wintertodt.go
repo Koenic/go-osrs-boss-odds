@@ -16,7 +16,7 @@ var Wintertodt = pkg.DefaultMonster{
 					},
 					{
 						Name: "Phoenix",
-						Odds: 1.0 / (150 * (9_999.0 / 10_000)),
+						Odds: 1.0 / (5_000 * (9_999.0 / 10_000)),
 					},
 					{
 						Name: "Tome of fire",

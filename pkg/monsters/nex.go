@@ -28,27 +28,27 @@ var Nex = pkg.DefaultMonster{
 				{
 					{
 						Name: "Zaryte vambraces",
-						Odds: (1.0 / 43) * (3.0 / 12) * 1.05,
+						Odds: (1.0 / 43) * (3.0 / 12),
 					},
 					{
 						Name: "Nihil horn",
-						Odds: (1.0 / 43) * (2.0 / 12) * 1.05,
+						Odds: (1.0 / 43) * (2.0 / 12),
 					},
 					{
 						Name: "Torva full helm (damaged)",
-						Odds: (1.0 / 43) * (2.0 / 12) * 1.05,
+						Odds: (1.0 / 43) * (2.0 / 12),
 					},
 					{
 						Name: "Torva platebody (damaged)",
-						Odds: (1.0 / 43) * (2.0 / 12) * 1.05,
+						Odds: (1.0 / 43) * (2.0 / 12),
 					},
 					{
 						Name: "Torva platelegs (damaged)",
-						Odds: (1.0 / 43) * (2.0 / 12) * 1.05,
+						Odds: (1.0 / 43) * (2.0 / 12),
 					},
 					{
 						Name: "Ancient hilt",
-						Odds: (1.0 / 43) * (1.0 / 12) * 1.05,
+						Odds: (1.0 / 43) * (1.0 / 12),
 					},
 				},
 			},
@@ -133,27 +133,27 @@ var Nex = pkg.DefaultMonster{
 				{
 					{
 						Name: "Zaryte vambraces",
-						Odds: (1.0 / 86) * (3.0 / 12) * (1 + .1/3),
+						Odds: (1.0 / 86) * (3.0 / 12),
 					},
 					{
 						Name: "Nihil horn",
-						Odds: (1.0 / 86) * (2.0 / 12) * (1 + .1/3),
+						Odds: (1.0 / 86) * (2.0 / 12),
 					},
 					{
 						Name: "Torva full helm (damaged)",
-						Odds: (1.0 / 86) * (2.0 / 12) * (1 + .1/3),
+						Odds: (1.0 / 86) * (2.0 / 12),
 					},
 					{
 						Name: "Torva platebody (damaged)",
-						Odds: (1.0 / 86) * (2.0 / 12) * (1 + .1/3),
+						Odds: (1.0 / 86) * (2.0 / 12),
 					},
 					{
 						Name: "Torva platelegs (damaged)",
-						Odds: (1.0 / 86) * (2.0 / 12) * (1 + .1/3),
+						Odds: (1.0 / 86) * (2.0 / 12),
 					},
 					{
 						Name: "Ancient hilt",
-						Odds: (1.0 / 86) * (1.0 / 12) * (1 + .1/3),
+						Odds: (1.0 / 86) * (1.0 / 12),
 					},
 				},
 			},
@@ -238,27 +238,27 @@ var Nex = pkg.DefaultMonster{
 				{
 					{
 						Name: "Zaryte vambraces",
-						Odds: (1.0 / 129) * (3.0 / 12) * (1 + .1/4),
+						Odds: (1.0 / 129) * (3.0 / 12),
 					},
 					{
 						Name: "Nihil horn",
-						Odds: (1.0 / 129) * (2.0 / 12) * (1 + .1/4),
+						Odds: (1.0 / 129) * (2.0 / 12),
 					},
 					{
 						Name: "Torva full helm (damaged)",
-						Odds: (1.0 / 129) * (2.0 / 12) * (1 + .1/4),
+						Odds: (1.0 / 129) * (2.0 / 12),
 					},
 					{
 						Name: "Torva platebody (damaged)",
-						Odds: (1.0 / 129) * (2.0 / 12) * (1 + .1/4),
+						Odds: (1.0 / 129) * (2.0 / 12),
 					},
 					{
 						Name: "Torva platelegs (damaged)",
-						Odds: (1.0 / 129) * (2.0 / 12) * (1 + .1/4),
+						Odds: (1.0 / 129) * (2.0 / 12),
 					},
 					{
 						Name: "Ancient hilt",
-						Odds: (1.0 / 129) * (1.0 / 12) * (1 + .1/4),
+						Odds: (1.0 / 129) * (1.0 / 12),
 					},
 				},
 			},

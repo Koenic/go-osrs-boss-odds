@@ -115,6 +115,20 @@ var DukeSucellus = pkg.DefaultMonster{
 						Amount: 1,
 					},
 				},
+				{
+					{
+						Name:   "Chromium ingot",
+						Amount: 3,
+					},
+					{
+						Name:   "Magus vestige Roll",
+						Amount: 3,
+					},
+					{
+						Name:   "Eye of the duke",
+						Amount: 1,
+					},
+				},
 			},
 		},
 	},

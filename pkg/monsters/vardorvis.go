@@ -18,27 +18,27 @@ var Vardorvis = pkg.DefaultMonster{
 				{
 					{
 						Name: "Chromium ingot",
-						Odds: (1.0 / 96) * (3.0 / 8),
+						Odds: (1.0 / 136) * (3.0 / 8),
 					},
 					{
 						Name: "Ultor vestige Roll",
-						Odds: (1.0 / 96) * (3.0 / 8),
+						Odds: (1.0 / 136) * (3.0 / 8),
 					},
 					{
 						Name: "Executioner's axe head",
-						Odds: (1.0 / 96) * (1.0 / 8),
+						Odds: (1.0 / 136) * (1.0 / 8),
 					},
 					{
 						Name: "Virtus mask",
-						Odds: (1.0 / 96) * (1.0 / 8) * (1.0 / 3),
+						Odds: (1.0 / 136) * (1.0 / 8) * (1.0 / 3),
 					},
 					{
 						Name: "Virtus robe top",
-						Odds: (1.0 / 96) * (1.0 / 8) * (1.0 / 3),
+						Odds: (1.0 / 136) * (1.0 / 8) * (1.0 / 3),
 					},
 					{
 						Name: "Virtus robe bottom",
-						Odds: (1.0 / 96) * (1.0 / 8) * (1.0 / 3),
+						Odds: (1.0 / 136) * (1.0 / 8) * (1.0 / 3),
 					},
 					{
 						Name: "Strangled tablet",
@@ -112,6 +112,20 @@ var Vardorvis = pkg.DefaultMonster{
 					},
 					{
 						Name:   "Virtus robe bottom",
+						Amount: 1,
+					},
+				},
+				{
+					{
+						Name:   "Chromium ingot",
+						Amount: 3,
+					},
+					{
+						Name:   "Ultor vestige Roll",
+						Amount: 3,
+					},
+					{
+						Name:   "Executioner's axe head",
 						Amount: 1,
 					},
 				},

@@ -115,6 +115,20 @@ var Leviathan = pkg.DefaultMonster{
 						Amount: 1,
 					},
 				},
+				{
+					{
+						Name:   "Chromium ingot",
+						Amount: 3,
+					},
+					{
+						Name:   "Venator vestige Roll",
+						Amount: 3,
+					},
+					{
+						Name:   "Leviathan's lure",
+						Amount: 1,
+					},
+				},
 			},
 		},
 	},
