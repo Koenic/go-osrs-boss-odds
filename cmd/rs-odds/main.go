@@ -6,7 +6,6 @@ import (
 	"fmt"
 	"math"
 	"os"
-	"runtime/pprof"
 	"strings"
 
 	"gonum.org/v1/gonum/mat"
@@ -56,17 +55,19 @@ func main() {
 
 	testRun := false
 	argsWithoutProg := ""
-	if len(os.Args) >= 2 {
-		argsWithoutProg = os.Args[1]
-		testRun = true
-		f, err := os.Create("myprogram.prof")
-		if err != nil {
-			fmt.Println(err)
-			return
-		}
-		pprof.StartCPUProfile(f)
-		defer pprof.StopCPUProfile()
-	}
+
+	testRun = true
+	// if len(os.Args) >= 2 {
+	// 	argsWithoutProg = os.Args[1]
+	// 	testRun = true
+	// 	f, err := os.Create("myprogram.prof")
+	// 	if err != nil {
+	// 		fmt.Println(err)
+	// 		return
+	// 	}
+	// 	pprof.StartCPUProfile(f)
+	// 	defer pprof.StopCPUProfile()
+	// }
 
 	for _, monster := range monsters.All_Monsters {
 		monster_name_formatted := strings.Join(strings.Split(monster.GetName(), " "), "-")
@@ -107,7 +108,7 @@ func main() {
 					if scaled_datapoints == 0 {
 						scaled_datapoints = 1
 					}
-					step_size := ((iterations) / scaled_datapoints)
+					step_size = ((iterations) / scaled_datapoints)
 
 					if step_size == 0 {
 						step_size = 1
@@ -122,10 +123,12 @@ func main() {
 				matrix_base = mat.DenseCopyOf(matrix.Matrix)
 				matrix_mult := mat.DenseCopyOf(matrix.Matrix)
 
-				for i := 0; i < step_size-1; i++ {
-					matrix_mult.Mul(matrix_mult, matrix.Matrix)
+				for i = 1; i < step_size-1; i <<= 1 {
+					matrix_mult.Mul(matrix_mult, matrix_mult)
 				}
+				step_size = i
 
+				fmt.Println("step size", step_size)
 				for i := int64(1); matrix_base.At(0, j-1) < goal_completion; i++ {
 					matrix_base.Mul(matrix_base, matrix_mult)
 					cdf = append(cdf, matrix_base.At(0, j-1))
@@ -133,6 +136,7 @@ func main() {
 					if i%1000 == 0 {
 						fmt.Println("step", 1+i*int64(step_size), matrix_base.At(0, j-1))
 					}
+					fmt.Println("step", 1+i*int64(step_size), matrix_base.At(0, j-1))
 				}
 
 				if data[matrix_index].Monster_name == "" {

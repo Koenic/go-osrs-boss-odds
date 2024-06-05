@@ -8,7 +8,6 @@ import (
 
 	"github.com/james-bowman/sparse"
 	"github.com/koenic/rs-odds/pkg"
-	"gonum.org/v1/gonum/mat"
 )
 
 type BarrowsMonster struct {
@@ -132,49 +131,6 @@ var Barrows = BarrowsMonster{
 	},
 }
 
-func calcRows(goal []pkg.DropGoal) int {
-	total := 1
-	for _, item := range goal {
-		total *= (item.Amount) + 1
-	}
-	return total
-}
-
-func index_to_gotten_drops(goal []pkg.DropGoal, index int) []int {
-	index_bounds := []int{}
-	array_size := 1
-	gotten_drops := []int{}
-	for _, drop := range goal {
-		index_bounds = append(index_bounds, drop.Amount+1)
-		array_size *= drop.Amount + 1
-	}
-
-	for i := range goal {
-		gotten_drops = append(gotten_drops, index%index_bounds[i])
-		index /= index_bounds[i]
-	}
-	return gotten_drops
-}
-
-func gotten_drops_to_index(goal []pkg.DropGoal, gotten_drops []int) int {
-	index := 0
-	size := 1
-	for i, drop := range goal {
-		dimSize := drop.Amount + 1
-		index += gotten_drops[i] * size
-		size *= dimSize
-	}
-	return index
-}
-
-func eye(n int) *mat.Dense {
-	d := make([]float64, n*n)
-	for i := 0; i < n*n; i += n + 1 {
-		d[i] = 1
-	}
-	return mat.NewDense(n, n, d)
-}
-
 func getDropNames(drop_goal []pkg.DropGoal) []string {
 
 	drop_names := make([]string, len(drop_goal))
@@ -260,8 +216,6 @@ func (monsterVariation BarrowsVariation) GetTransitionMatrices() []pkg.DropMatri
 
 		n_rows := 25
 
-		dropGoalTransitionMatrix := eye(n_rows)
-
 		rows := []int{}
 		cols := []int{}
 		odds := []float64{}
@@ -295,8 +249,7 @@ func (monsterVariation BarrowsVariation) GetTransitionMatrices() []pkg.DropMatri
 		fmt.Println(rows)
 		fmt.Println(cols)
 		fmt.Println(odds)
-		dense := sparse.NewCOO(n_rows, n_rows, rows, cols, odds).ToDense()
-		dropGoalTransitionMatrix.Mul(dropGoalTransitionMatrix, dense)
+		dropGoalTransitionMatrix := sparse.NewCOO(n_rows, n_rows, rows, cols, odds).ToDense()
 
 		drop_table_matrices = append(drop_table_matrices, pkg.DropMatrix{
 			Matrix:      dropGoalTransitionMatrix,

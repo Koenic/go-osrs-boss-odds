@@ -117,7 +117,7 @@ def plot_graph(json_file):
     ax1yLim = 0
     ax2yLim = 0
     idx_cutoff = 0
-    idx_max_cutoff = 1000000
+    idx_max_cutoff = 100000000
 
     # interpolate data
     interpolated_variation = []
